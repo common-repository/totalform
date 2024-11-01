@@ -1,0 +1,25 @@
+CREATE TABLE IF NOT EXISTS `{{prefix}}totalform_entries`
+(
+    `id`         INT UNSIGNED NOT NULL AUTO_INCREMENT,
+    `uid`        TEXT         NOT NULL,
+    `form_uid`   TEXT         NOT NULL,
+    `ip`         TEXT         NOT NULL,
+    `user_agent` TEXT         NOT NULL,
+    `user_id`    INT UNSIGNED NOT NULL,
+    `read`       INT UNSIGNED NOT NULL,
+    `bookmark`   INT UNSIGNED NOT NULL,
+    `created_at` DATETIME     NOT NULL,
+    `deleted_at` DATETIME     NULL,
+    `read_at`    DATETIME     NULL,
+    `bookmarked_at`    DATETIME     NULL,
+    `data`       TEXT         NOT NULL,
+    `meta`       TEXT         NULL,
+    PRIMARY KEY (`id`),
+    INDEX (`uid`(255)),
+    INDEX (`form_uid`(255)),
+    INDEX (`ip`(255)),
+    INDEX (`user_id`),
+    INDEX (`read`),
+    INDEX (`bookmark`),
+    INDEX (`created_at`)
+) ENGINE = InnoDB;
